@@ -49,5 +49,6 @@ romfs:
 ifeq ($(GITHUB_ACTION),n)	
 	$(ROMFSINST) -p +x $(THISDIR)/bin/v2ray /usr/bin/v2ray
 else
-	$(ROMFSINST) -p +x $(THISDIR)/v2ray /usr/bin/v2ray
+	#$(ROMFSINST) -p +x $(THISDIR)/v2ray /usr/bin/v2ray
+	ln -sf $(ROMFSDIR)/usr/bin/xray $(ROMFSDIR)/usr/bin/v2ray
 endif
